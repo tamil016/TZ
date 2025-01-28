@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(white, #efedf0);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .innerContainer {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .pricing-card {
+            border: 0.5px solid gray;
+            border-radius: 0px 60px 0px 60px;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: calc((100% - 60px) / 3);
+            flex: 0 0 auto;
+            transition: height 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .pricing-card.expanded {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card:hover {
+            background-color: #623193;
+            color: white;
+        }
+
+        .pricing-card h3,
+        .pricing-card h4 {
+            margin: 15px 0;
+        }
+
+        .pricing-card ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20px;
+        }
+
+        .pricing-card ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card ul li::before {
+            content: "✓";
+            margin-right: 10px;
+            color: #623193;
+        }
+
+        .pricing-card:hover ul li::before {
+            color: white;
+        }
+
+        .content-wrapper {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .readmore {
+            cursor: pointer;
+            color: #623193;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .pricing-card:hover .readmore {
+            color: white;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #623193;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .carousel-arrow.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .carousel-arrow-left {
+            left: 0;
+        }
+
+        .carousel-arrow-right {
+            right: 0;
+        }
+
+        @media (max-width: 991px) {
+            .carousel-wrapper {
+                padding: 0 40px;
+            }
+
+            .pricing-card {
+                width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .carousel-wrapper {
+                padding: 0 20px;
+            }
+
+            .pricing-card {
+                width: 80%;
+            }
+
+            .carousel-arrow {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Pricing Table</h1>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow carousel-arrow-left disabled" onclick="slideCards('left')">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="carousel-arrow carousel-arrow-right" onclick="slideCards('right')">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="carousel-container">
+                <div class="innerContainer">
+                    <div class="pricing-card">
+                        <h3>Basic Plan</h3>
+                        <h4>$0.99 / month</h4>
+                        <ul>
+                            <li>Contactless delivery</li>
+                            <li>Mobile app</li>
+                            <li>Dashboard</li>
+                            <li>In-Depth Statistics</li>
+                            <li>Tracking Service</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Starter Plan</h3>
+                        <h4>$0.99 / month</h4>
+                        <ul>
+                            <li>Contactless delivery</li>
+                            <li>Mobile app</li>
+                            <li>Dashboard</li>
+                            <li>In-Depth Statistics</li>
+                            <li>Tracking Service</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Regular Plan</h3>
+                        <h4>$1.99 / month</h4>
+                        <ul>
+                            <li>All the previous perks</li>
+                            <li>Live coverage</li>
+                            <li>Analysis</li>
+                            <li>Selling your terms</li>
+                            <li>Onboarding</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Advance Plan</h3>
+                        <h4>$7.99 / month</h4>
+                        <ul>
+                            <li>All the previous perks</li>
+                            <li>Marketing app</li>
+                            <li>Delivery app</li>
+                            <li>Extended support</li>
+                            <li>Chat</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.readmore').forEach(button => {
+            button.addEventListener('click', function () {
+                const contentWrapper = this.closest('.content-wrapper');
+                const moreContent = contentWrapper.querySelector('.more-content');
+
+                if (moreContent.style.display === 'none' || moreContent.style.display === '') {
+                    moreContent.style.display = 'block';
+                    this.textContent = 'Read less';
+                } else {
+                    moreContent.style.display = 'none';
+                    this.textContent = 'Read more';
+                }
+                const pricingCard = this.closest('.pricing-card');
+                pricingCard.classList.toggle('expanded');
+            });
+        });
+
+        let currentPosition = 0;
+        const container = document.querySelector('.innerContainer');
+        const cardWidth = document.querySelector('.pricing-card').offsetWidth + 30;
+
+        function slideCards(direction) {
+            const maxPosition = -cardWidth;
+
+            if (direction === 'right' && currentPosition === 0) {
+                currentPosition = maxPosition;
+            } else if (direction === 'left' && currentPosition === maxPosition) {
+                currentPosition = 0;
+            }
+
+            container.style.transform = `translateX(${currentPosition}px)`;
+
+            document.querySelector('.carousel-arrow-left').classList.toggle('disabled', currentPosition === 0);
+            document.querySelector('.carousel-arrow-right').classList.toggle('disabled', currentPosition === maxPosition);
+        }
+    </script>
+
+</body>
+
+</html>

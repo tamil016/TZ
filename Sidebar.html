@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./telthcare.css">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">TZ</div>
+            <span class="title">Sidebar</span>
+        </div>
+        <div class="listIcon">
+            <i class="bi bi-list-task d-flex justify-content-end m-3" id="toggleButton"></i>
+        </div>
+
+        <nav class="nav d-flex flex-column ">
+            <a href="./appointment.html" class="nav-link active" data-title="Appointment">
+                <i class="bi bi-house-door" title="Appointment" data-bs-toggle="tooltip" data-bs-placement="right"></i>
+                <span>Appointment</span>
+            </a>
+            <a href="./coupon.html" class="nav-link" data-title="Coupon">
+                <i class="bi bi-speedometer2"  title="Coupon" data-bs-toggle="tooltip" data-bs-placement="right"></i>
+                <span>Coupon</span>
+            </a>
+            <a href="./healthreport.html" class="nav-link" data-title="Health Report">
+                <i class="bi bi-cart"  title="Health Report" data-bs-toggle="tooltip" data-bs-placement="right"></i>
+                <span>Health Report</span>
+            </a>
+            <a href="./payment.html" class="nav-link" data-title="Payment">
+                <i class="bi bi-wallet2"  title="Payment" data-bs-toggle="tooltip" data-bs-placement="right"></i>
+                <span>Payment</span>
+            </a>
+            <a href="./careplan.html" class="nav-link" data-title="Care Plan">
+                <i class="bi bi-people"  title="Care Plan" data-bs-toggle="tooltip" data-bs-placement="right"></i>
+                <span>Care Plan</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="./telthcare.js"></script>
+</body>
+
+</html>

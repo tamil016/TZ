@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(white, #efedf0);
+        }
+
+        .innerContainer {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pricing-card {
+            border: 1px solid gray;
+            border-radius: 0px 60px 0px 60px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 2px 1px #623193;
+            width: calc((100% - 60px) / 3);
+            flex: 0 0 auto;
+            transition: height 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+            border-bottom-color: #623193;
+            border-left-color: #623193;
+        }
+
+        .pricing-card.expanded {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card:hover {
+            background-color: #623193;
+            color: white;
+        }
+
+        .pricing-card h3,
+        .pricing-card h4 {
+            margin: 15px 0;
+        }
+
+        .pricing-card ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20px;
+        }
+
+        .pricing-card ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card ul li::before {
+            content: "✓";
+            margin-right: 10px;
+            color: #623193;
+        }
+
+        .pricing-card:hover ul li::before {
+            color: white;
+        }
+
+        .content-wrapper {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .readmore {
+            cursor: pointer;
+            color: #623193;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .pricing-card:hover .readmore {
+            color: white;
+        }
+
+        .pricing-card:hover .choosePlanButton {
+            background-color: white;
+            color: #623193;
+            font-weight: 500;
+        }
+
+        .choosePlanButton {
+            margin-top: 25px;
+            border-radius: 0px 20px 0px 20px;
+            background-color: #623193;
+            color: white;
+            font-weight: 500;
+            height: 55px;
+            padding-top: 12px;
+        }
+
+        .planMonth {
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        .planDetail {
+            margin: 0px 0px 25px 15px;
+        }
+
+        .planDetail h3,
+        .planDetail h4 {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 991px) {
+            .carousel-wrapper {
+                padding: 0 40px;
+            }
+
+            .pricing-card {
+                width: calc(50% - 15px);
+                font-size: 16px;
+            }
+
+            .choosePlanButton {
+                font-weight: 400;
+                font-size: 16px;
+                height: 50px;
+                padding-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .innerContainer {
+                display: flex;
+                justify-content: center;
+            }
+
+            .pricing-card {
+                width: 320px;
+                font-size: 14px;
+            }
+
+            .choosePlanButton {
+                height: 35px;
+                font-size: 14px;
+                height: 45px;
+                padding-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .pricing-card {
+                width: 200px;
+                font-size: 11px;
+            }
+
+            .choosePlanButton {
+                height: 30px;
+                font-size: 11px;
+                height: 40px;
+                padding-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Pricing Table</h1>
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="innerContainer d-flex flex-wrap gap-4 align-items-start">
+                    <div class="pricing-card p-4">
+                        <div class="d-flex flex-column align-items-start planDetail">
+                            <h3>Basic Plan</h3>
+                            <h4>$0.99 <span class="planMonth">/ month</span></h4>
+                        </div>
+                        <ul>
+                            <li>Contactless delivery</li>
+                            <li>Mobile app</li>
+                            <li>Dashboard</li>
+                            <li>In-Depth Statistics</li>
+                            <li>Tracking Service</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                        <a class="btn choosePlanButton w-75" href="#" role="button">Choose Plan</a>
+                    </div>
+                    <div class="pricing-card p-4">
+                        <div class="d-flex flex-column align-items-start planDetail">
+                            <h3>Starter Plan</h3>
+                            <h4>$0.99 <span class="planMonth">/ month</span></h4>
+                        </div>
+                        <ul>
+                            <li>Contactless delivery</li>
+                            <li>Mobile app</li>
+                            <li>Dashboard</li>
+                            <li>In-Depth Statistics</li>
+                            <li>Tracking Service</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                        <a class="btn choosePlanButton w-75" href="#" role="button">Choose Plan</a>
+                    </div>
+                    <div class="pricing-card p-4">
+                        <div class="d-flex flex-column align-items-start planDetail">
+                            <h3>Regular Plan</h3>
+                            <h4>$1.99 <span class="planMonth">/ month</span></h4>
+                        </div>
+                        <ul>
+                            <li>All the previous perks</li>
+                            <li>Live coverage</li>
+                            <li>Analysis</li>
+                            <li>Selling your terms</li>
+                            <li>Onboarding</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                        <a class="btn choosePlanButton w-75" href="#" role="button">Choose Plan</a>
+                    </div>
+                    <div class="pricing-card p-4">
+                        <div class="d-flex flex-column align-items-start planDetail">
+                            <h3>Advance Plan</h3>
+                            <h4>$7.99 <span class="planMonth">/ month</span></h4>
+                        </div>
+                        <ul>
+                            <li>All the previous perks</li>
+                            <li>Marketing app</li>
+                            <li>Delivery app</li>
+                            <li>Extended support</li>
+                            <li>Chat</li>
+                            <div class="content-wrapper">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <div class="more-content">
+                                    Phasellus erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+                                    congue eget,
+                                    auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+                                </div>
+                                <a class="readmore">Read more</a>
+                            </div>
+                        </ul>
+                        <a class="btn choosePlanButton w-75" href="#" role="button">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.readmore').forEach(button => {
+            button.addEventListener('click', function () {
+                const contentWrapper = this.closest('.content-wrapper');
+                const moreContent = contentWrapper.querySelector('.more-content');
+
+                if (!moreContent.style.maxHeight || moreContent.style.maxHeight === '0px') {
+                    moreContent.style.display = 'block';
+                    moreContent.style.maxHeight = moreContent.scrollHeight + 'px';
+                    this.textContent = 'Read less';
+                } else {
+                    moreContent.style.maxHeight = '0px';
+                    this.textContent = 'Read more';
+                }
+
+                const pricingCard = this.closest('.pricing-card');
+                pricingCard.classList.toggle('expanded');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
